@@ -1,0 +1,8 @@
+# Ignore everything
+*
+
+# Keep the directory itself
+!.gitignore
+
+# Allow configuration.yaml
+!configuration.yaml
