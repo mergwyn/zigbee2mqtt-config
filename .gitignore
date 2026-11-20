@@ -4,5 +4,6 @@
 # Keep the directory itself
 !.gitignore
 
-# Allow configuration.yaml
+# Allow limited configuration filesZZ
 !configuration.yaml
+!groups.yaml
