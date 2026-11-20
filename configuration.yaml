@@ -1,0 +1,43 @@
+version: 5
+ota:
+  zigbee_ota_override_index_location: local_ota_index.json
+homeassistant:
+  enabled: true
+  discovery_topic: homeassistant
+frontend:
+  enabled: true
+  port: 8080
+  url: https://zigbee2mqtt.theclarkhome.com
+mqtt:
+  base_topic: zigbee2mqtt
+  server: mqtt://mosquitto:1883
+  user: '!secrets.yaml mqtt_user'
+  password: '!secrets.yaml mqtt_password'
+  include_device_information: true
+advanced:
+  network_key: '!secrets.yaml network_key'
+  pan_id: 6543
+  ext_pan_id:
+    - 6
+    - 70
+    - 178
+    - 3
+    - 21
+    - 159
+    - 124
+    - 142
+  log_output:
+    - console
+  log_level: info
+  last_seen: ISO_8601
+  channel: 25
+  transmit_power: 20
+serial:
+  port: tcp://slzb-06-1.theclarkhome.com:6638
+  adapter: zstack
+  disable_led: false
+  baudrate: 115200
+blocklist:
+  - '0x540f57fffe21f940'
+devices: devices.yaml
+groups: groups.yaml
